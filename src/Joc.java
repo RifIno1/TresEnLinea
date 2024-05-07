@@ -1,5 +1,5 @@
 public class Joc {
-
+    char [][] taulell;
     int torn;
 
     public int getTorn() {
