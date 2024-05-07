@@ -7,8 +7,19 @@ public class Tui {
         System.out.println("4. Sortir");
     }
 
-    public void mostrarTaulle(){
-        throw new UnsupportedOperationException();
+    public void mostrarTauller(char[][] tauler) {
+        for (int i = 0; i < tauler.length; i++) {
+            for (int j = 0; j < tauler[i].length; j++) {
+                System.out.print(tauler[i][j]);
+                if (j < tauler[i].length - 1) {
+                    System.out.print("|");
+                }
+            }
+            System.out.println();
+            if (i < tauler.length - 1) {
+                System.out.println("-----");
+            }
+        }
     }
 
     public void recollirJugada(){

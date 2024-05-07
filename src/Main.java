@@ -5,7 +5,7 @@ public class Main {
         Joc joc = new Joc();
 
         tui.mostrarMenu();
-        joc.novaPartida();
+        joc.novaPartida(new char[3][3]);
         joc.CarregarPartida();
 
 
