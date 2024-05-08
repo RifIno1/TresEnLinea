@@ -14,6 +14,7 @@ public class JocTest {
 
     @org.junit.jupiter.api.Test
     void novaPartida_torn_new() {
+        // github
         Joc joc = new Joc();
         joc.novaPartida();
         Assertions.assertEquals(1, joc.getTorn());
