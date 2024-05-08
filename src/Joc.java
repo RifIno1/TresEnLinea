@@ -1,54 +1,61 @@
 public class Joc {
-    char [][] taulell;
-    int torn;
 
+    private char [][] taulell;
+    private int torn;
+
+    public char[][] getTaulell() {
+        return taulell;
+    }
     public int getTorn() {
         return torn;
     }
 
-    public void novaPartida(char[][] tauler) {
-        torn = 1;
-        for (int i = 0; i < tauler.length; i++) {
-            for (int j = 0; j < tauler[i].length; j++) {
-                tauler[i][j] = ' ';
+    public void novaPartida()
+    {
+        taulell = new char[3][3];
+        for (int i = 0; i < taulell.length; i++) {
+            for (int j = 0; j < taulell[i].length; j++) {
+                taulell[i][j] = ' ';
             }
         }
+        torn = 1;
     }
 
     public void CarregarPartida() {
         throw new UnsupportedOperationException();
     }
     
-    public void jugar(char[][] tauler, int fila, int columna) {
-        if (torn == 1) {
-            tauler[fila][columna] = 'X';
-            torn = 2;
-        } else {
-            tauler[fila][columna] = 'O';
-            torn = 1;
+    public void jugar(int fila, int columna) {
+        if (taulell[fila][columna] == ' ') {
+            if (torn == 1) {
+                taulell[fila][columna] = 'X';
+                torn = 2;
+            } else {
+                taulell[fila][columna] = 'O';
+                torn = 1;
+            }
         }
     }
 
-    public boolean jugadaGuanyadora(char[][] tauler, char jugador) {
-        for (int i = 0; i < tauler.length; i++) {
-            if (tauler[i][0] == jugador && tauler[i][1] == jugador && tauler[i][2] == jugador) {
+    public boolean jugadaGuanyadora(int fila, int columna) {
+        char jugador = taulell[fila][columna];
+        if (taulell[fila][0] == jugador && taulell[fila][1] == jugador && taulell[fila][2] == jugador) {
+            return true;
+        }
+        if (taulell[0][columna] == jugador && taulell[1][columna] == jugador && taulell[2][columna] == jugador) {
+            return true;
+        }
+        if (fila == columna) {
+            if (taulell[0][0] == jugador && taulell[1][1] == jugador && taulell[2][2] == jugador) {
                 return true;
             }
         }
-        for (int i = 0; i < tauler.length; i++) {
-            if (tauler[0][i] == jugador && tauler[1][i] == jugador && tauler[2][i] == jugador) {
+        if (fila + columna == 2) {
+            if (taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador) {
                 return true;
             }
-        }
-        if (tauler[0][0] == jugador && tauler[1][1] == jugador && tauler[2][2] == jugador) {
-            return true;
-        }
-        if (tauler[0][2] == jugador && tauler[1][1] == jugador && tauler[2][0] == jugador) {
-            return true;
         }
         return false;
     }
-
-
 
 }
