@@ -12,6 +12,13 @@ public class JocTest {
         Assertions.assertEquals(1, joc.getTorn());
     }
 
+    @org.junit.jupiter.api.Test
+    void novaPartida_torn_new() {
+        Joc joc = new Joc();
+        joc.novaPartida();
+        Assertions.assertEquals(1, joc.getTorn());
+    }
+
 
 
     @org.junit.jupiter.api.Test
