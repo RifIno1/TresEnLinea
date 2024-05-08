@@ -14,18 +14,18 @@ public class Tui {
     }
 
     public void mostrarTauller(char[][] taulell, int torn) {
-        System.out.println("Jugador" + torn + " : " + (torn == 1 ? "X" : "O")); 
+        System.out.println("Jugador" + torn + " : " + (torn == 1 ? "X" : "O"));
+        System.out.println("-------------");
         for (int i = 0; i < taulell.length; i++) {
+            System.out.print("| ");
             for (int j = 0; j < taulell[i].length; j++) {
-                System.out.print(taulell[i][j]);
-                if (j < taulell[i].length - 1) {
-                    System.out.print("|");
-                }
+                System.out.print(taulell[i][j] + " | ");
+
             }
             System.out.println();
             if (i < taulell.length - 1) {
-                System.out.println("-----");
             }
+            System.out.println("-------------");
         }
     }
 
