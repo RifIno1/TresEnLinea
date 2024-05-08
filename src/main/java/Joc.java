@@ -51,7 +51,6 @@ public class Joc {
             }
         }
         if (fila + columna == 2) {
-            // test
             return taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador;
         }
         return false;
