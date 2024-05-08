@@ -14,10 +14,12 @@ public class Main {
                     break;
                 case 2:
                     joc.CarregarPartida();
+                    /*
                     opcio2(joc, tui);
+                     */
                     break;
                 case 3:
-                    tui.Configuració();
+                    tui.Configuracio();
                     break;
                 case 4:
                     tui.Sortir();
@@ -45,9 +47,6 @@ public class Main {
         }
     }
 
-    private static void opcio2(Joc joc, Tui tui) {
-        
-    }
 
 
 }

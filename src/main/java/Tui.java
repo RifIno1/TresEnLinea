@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Tui {
 
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
     public int mostrarMenu() {
         System.out.println("1. Nova Partida");
@@ -71,7 +71,7 @@ public class Tui {
         }
     }
 
-    public void Configuració(){
+    public void Configuracio(){
         throw new UnsupportedOperationException();
     }
 

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Joc {
 
     private char [][] taulell;
@@ -13,10 +15,8 @@ public class Joc {
     public void novaPartida()
     {
         taulell = new char[3][3];
-        for (int i = 0; i < taulell.length; i++) {
-            for (int j = 0; j < taulell[i].length; j++) {
-                taulell[i][j] = ' ';
-            }
+        for (char[] chars : taulell) {
+            Arrays.fill(chars, ' ');
         }
         torn = 1;
     }
@@ -51,9 +51,7 @@ public class Joc {
             }
         }
         if (fila + columna == 2) {
-            if (taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador) {
-                return true;
-            }
+            return taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador;
         }
         return false;
     }
