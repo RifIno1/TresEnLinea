@@ -32,32 +32,35 @@ public class Tui {
     }
 
     public int[] recollirJugada(){
+
+        Joc joc = new Joc();
+
         System.out.print("Introdueix la fila: ");
         while (!sc.hasNextInt()) {
-            System.out.println("Introdueix un número entre 0 i 2");
+            System.out.println("Introdueix un número entre -1 i 2");
             sc.next();
         }
         int fila = sc.nextInt();
-        while (fila < 0 || fila > 2) {
-            System.out.println("Introdueix un número entre 0 i 2");
+        while (fila < -1 || fila > 2) {
+            System.out.println("Introdueix un número entre -1 i 2");
             fila = sc.nextInt();
         }
         System.out.print("Introdueix la columna: ");
         while (!sc.hasNextInt()) {
-            System.out.println("Introdueix un número entre 0 i 2");
+            System.out.println("Introdueix un número entre -1 i 2");
             sc.next();
         }
         int columna = sc.nextInt();
-        while (columna < 0 || columna > 2) {
-            System.out.println("Introdueix un número entre 0 i 2");
+        while (columna < -1 || columna > 2) {
+            System.out.println("Introdueix un número entre -1 i 2");
             columna = sc.nextInt();
         }
+
+        if (fila == -1 && columna == -1) {
+            joc.guardarPartida();
+        }
+
         return new int[]{fila, columna};
-
-
-        
-
-        
     }
 
     public void fiDePartida(int guanyador) {
@@ -82,7 +85,7 @@ public class Tui {
             sc.next();
         }
         tamanoMostrador = sc.nextInt();
-        while (tamanoMostrador < 3 || tamanoMostrador > 10) {
+        while (tamanoMostrador <= 3 || tamanoMostrador >= 10) {
             System.out.println("Introduzca un número entre 3 y 10");
             tamanoMostrador = sc.nextInt();
         }
