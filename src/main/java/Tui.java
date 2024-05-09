@@ -9,7 +9,7 @@ public class Tui {
         System.out.println("2. Carregar Partida");
         System.out.println("3. Configuració");
         System.out.println("4. Sortir");
-        System.out.print("Escull una opció: ");
+        System.out.print("Escull una opció : ");
         return sc.nextInt();
     }
 
