@@ -74,33 +74,32 @@ public class Tui {
     }
 
     //metodo para guardar la configuracion en un archivo
-    public int tamanoMostrador;   // variable para almacenar el tamaño del mostrador
     public void Configuracio() {
+        int tamanoMostrador = 3; // Tamaño por defecto
         System.out.println("Ingrese el nuevo tamaño del mostrador (mínimo 3, máximo 10):");
-        Scanner sc = new Scanner(System.in);
-        int nuevoTamano = sc.nextInt();
-        if (nuevoTamano >= 3 && nuevoTamano <= 10) {
-            tamanoMostrador = nuevoTamano; // Actualizar el tamaño del mostrador
-            guardarConfiguracion(tamanoMostrador); // Guardar la configuración en un archivo
-            System.out.println("Configuración guardada correctamente.");
-
-        } else {
-            System.out.println("El tamaño del mostrador debe estar entre 3 y 10.");
+        while (!sc.hasNextInt()) {
+            System.out.println("No es un numero !!");
+            sc.next();
         }
+        tamanoMostrador = sc.nextInt();
+        while (tamanoMostrador < 3 || tamanoMostrador > 10) {
+            System.out.println("Introduzca un número entre 3 y 10");
+            tamanoMostrador = sc.nextInt();
+        }
+        guardarConfiguracion(tamanoMostrador);
     }
 
 
-        private void guardarConfiguracion(int tamanoMostrador){
+    private void guardarConfiguracion(int tamanoMostrador) {
         try {
-            FileWriter writer = new FileWriter("C://files/config.txt");
-            writer.write(tamanoMostrador);
-
+            FileWriter myWriter = new FileWriter("C://files/config.txt");
+            myWriter.write(String.valueOf(tamanoMostrador));
+            myWriter.close();
         } catch (IOException e) {
-            System.out.println("Error al guardar la configuracion en el archivo.");
+            System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
-        }
+    }
 
 
 
