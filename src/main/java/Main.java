@@ -20,6 +20,9 @@ public class Main {
                     break;
                 case 3:
                     tui.Configuracio();
+                    tui.mostrarMenu();
+                    joc.novaPartida();
+                    opcio1(joc, tui);
                     break;
                 case 4:
                     tui.Sortir();
@@ -46,6 +49,14 @@ public class Main {
             }
         }
     }
+
+
+
+
+
+
+
+
 
 
 

@@ -56,4 +56,6 @@ public class Joc {
         return false;
     }
 
+    public void guardarPartida() {
+    }
 }
