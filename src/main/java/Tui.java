@@ -44,12 +44,7 @@ public class Tui {
         if (guanyador == 0) {
             System.out.println("Empat!");
         } else {
-            if (guanyador == 1) {
-                guanyador = 2;
-            } else {
-                guanyador = 1;
-            }
-            System.out.println("Ha guanyat el jugador " + guanyador);
+            System.out.println("Ha guanyat el jugador " + (guanyador == 1 ? "O" : "X"));
         }
     }
 
