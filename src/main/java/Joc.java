@@ -1,4 +1,10 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Scanner;
 
 public class Joc {
 
@@ -22,7 +28,50 @@ public class Joc {
     }
 
     public void CarregarPartida() {
-        throw new UnsupportedOperationException();
+        // Load the saved game file
+        File savedGamesFolder = new File("C://files/savedgames");
+        File[] savedGameFiles = savedGamesFolder.listFiles();
+        if (savedGameFiles == null || savedGameFiles.length == 0) {
+            System.out.println("No hi ha cap partida guardada");
+            return;
+        }
+
+        // Display the list of saved game files
+        System.out.println("Partides guardades:");
+        for (int i = 0; i < savedGameFiles.length; i++) {
+            System.out.println((i + 1) + ". " + savedGameFiles[i].getName());
+        }
+
+        // Ask the user to choose a saved game file
+        System.out.print("Escull una partida guardada: ");
+        int savedGameIndex = new Scanner(System.in).nextInt() - 1;
+        if (savedGameIndex < 0 || savedGameIndex >= savedGameFiles.length) {
+            System.out.println("Opció incorrecta");
+            return;
+        }
+
+        // Load the saved game file
+        File savedGameFile = savedGameFiles[savedGameIndex];
+        try {
+            Scanner reader = new Scanner(savedGameFile);
+
+            // Read the current player's turn from the first line of the file
+            torn = reader.nextInt();
+            reader.nextLine();
+
+            // Read the contents of the taulell matrix from the rest of the lines
+            taulell = new char[3][3];
+            for (int i = 0; i < 3; i++) {
+                taulell[i] = reader.nextLine().toCharArray();
+            }
+
+            
+
+            reader.close();
+            System.out.println("Partida carregada correctament de " + savedGameFile.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     public void jugar(int fila, int columna) {
@@ -57,5 +106,38 @@ public class Joc {
     }
 
     public void guardarPartida() {
+        try {
+            // Create the "savedgames" folder if it doesn't exist
+            File savedGamesFolder = new File("C://files/savedgames");
+            if (!savedGamesFolder.exists()) {
+                savedGamesFolder.mkdir();
+            }
+
+            // Create a file with the current date and time as the name
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
+            String fileName = dateFormat.format(new Date()) + ".txt";
+            File savedGameFile = new File(savedGamesFolder, fileName);
+
+            // Write the current player's turn to the first line of the file
+            FileWriter writer = new FileWriter(savedGameFile);
+            writer.write(Integer.toString(torn));
+            writer.write(System.lineSeparator());
+
+            // Write the contents of the taulell matrix to the rest of the lines
+            for (char[] row : taulell) {
+                for (char cell : row) {
+                    writer.write(cell);
+                }
+                writer.write(System.lineSeparator());
+            }
+
+            writer.close();
+            System.out.println("Partida guardada correctamente en " + savedGameFile.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+
+
 }
