@@ -11,9 +11,28 @@ public class Joc {
     private char [][] taulell;
     private int torn;
 
+        // Read the size of the board from the config.txt file
+    public int getSizeOfMida() {
+        // Initialize the board with a default size of 3x3
+        int mida = 3;
+        try {
+            // Create a Scanner object to read the contents of the config.txt file
+            Scanner reader = new Scanner(new File("C://files/config.txt"));
+            // Read the size of the board from the first line of the file and convert it to an integer value
+            mida = reader.nextInt();
+            // Close the Scanner object after reading the file
+            reader.close();
+        } catch (IOException e) {
+            // Display an error message if the config.txt file is not found or cannot be read
+            System.out.println("No se puede leer el archivo de configuración");
+        }
+        return mida;
+    }
+
     public char[][] getTaulell() {
         return taulell;
     }
+    
     public int getTorn() {
         return torn;
     }
@@ -22,7 +41,7 @@ public class Joc {
     public void novaPartida()
     {
         // Create a new 3x3 board with empty cells represented by space characters ' '
-        taulell = new char[3][3];
+        taulell = new char[getSizeOfMida()][getSizeOfMida()];
         for (char[] chars : taulell) {
             Arrays.fill(chars, ' ');
         }
