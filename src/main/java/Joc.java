@@ -125,23 +125,81 @@ public class Joc {
 
     // method to check if the current move by the player results in a winning combination on the board
     public boolean jugadaGuanyadora(int fila, int columna) {
-        char jugador = taulell[fila][columna];
-        if (taulell[fila][0] == jugador && taulell[fila][1] == jugador && taulell[fila][2] == jugador) {
+    char jugador = taulell[fila][columna];
+    int count = 0;
+
+    // check consecutive cells horizontally
+    for (int i = 0; i < taulell.length; i++) {
+        if (taulell[fila][i] == jugador) {
+            count++;
+        } else {
+            count = 0;
+        }
+
+        if (count == 3) {
             return true;
         }
-        if (taulell[0][columna] == jugador && taulell[1][columna] == jugador && taulell[2][columna] == jugador) {
-            return true;
-        }
-        if (fila == columna) {
-            if (taulell[0][0] == jugador && taulell[1][1] == jugador && taulell[2][2] == jugador) {
-                return true;
-            }
-        }
-        if (fila + columna == 2) {
-            return taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador;
-        }
-        return false;
     }
+
+    count = 0;
+
+    // check consecutive cells vertically
+    for (int i = 0; i < taulell.length; i++) {
+        if (taulell[i][columna] == jugador) {
+            count++;
+        } else {
+            count = 0;
+        }
+
+        if (count == 3) {
+            return true;
+        }
+    }
+
+    count = 0;
+
+    // check cells diagonally 1     
+    // calcul from where row should start
+    int row = fila - Math.min(fila, columna);
+    // calcul from where col should start
+    int col = columna - Math.min(fila, columna);
+    // check cells diagonally 1
+    while (row < taulell.length && col < taulell.length) {
+        if (taulell[row][col] == jugador) {
+            count++;
+        } else {
+            count = 0;
+        }
+
+        if (count == 3) {
+            return true;
+        }
+        // increment row and col
+        row++;
+        col++;
+    }
+    count = 0;
+
+    // check cells diagonally 2 
+    row = fila - Math.min(fila, taulell.length - 1 - columna);
+    col = columna + Math.min(fila, taulell.length - 1 - columna);
+    while (row < taulell.length && col >= 0) {
+        if (taulell[row][col] == jugador) {
+            count++;
+        } else {
+            count = 0;
+        }
+
+        if (count == 3) {
+            return true;
+        }
+        // increment row and decrement col
+        row++;
+        col--;
+    }
+    return false;
+}
+
 
     public void guardarPartida() {
         try {
