@@ -33,8 +33,9 @@ public class Tui {
 
     // method to get the player's move (row and column) from the console
     public int[] recollirJugada() {
+        char[][] taulell;
         int[] jugada = new int[2];
-        System.out.println("Introdueix la fila i la columna on vols posar la fitxa (0-2)");
+        System.out.println("Introdueix la fila i la columna on vols posar la fitxa (0-9)");
         System.out.print("Fila: ");
         jugada[0] = sc.nextInt();
         System.out.print("Columna: ");
@@ -64,7 +65,7 @@ public class Tui {
         // Read the new size of the board from the console
         tamanoMostrador = sc.nextInt();
         // Validate the input to ensure it is within the specified range (3-10)
-        while (tamanoMostrador <= 3 || tamanoMostrador >= 10) {
+        while (tamanoMostrador < 3 || tamanoMostrador > 10) {
             System.out.println("Introduzca un número entre 3 y 10");
             tamanoMostrador = sc.nextInt();
         }

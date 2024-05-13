@@ -88,9 +88,13 @@ public class Joc {
             torn = reader.nextInt();
             reader.nextLine();
 
+            // Read the size of the board from the second line of the file and convert it to an integer value
+            int size = reader.nextInt();
+            reader.nextLine();
+
             // Read the contents of the taulell matrix from the rest of the lines in the file and convert them to a 2D char array
-            taulell = new char[3][3];
-            for (int i = 0; i < 3; i++) {
+            taulell = new char[size][size];
+            for (int i = 0; i < size; i++) {
                 taulell[i] = reader.nextLine().toCharArray();
             }
 
@@ -121,28 +125,21 @@ public class Joc {
 
     // method to check if the current move by the player results in a winning combination on the board
     public boolean jugadaGuanyadora(int fila, int columna) {
-        // Get the player's symbol ('X' or 'O') based on the current player's turn
         char jugador = taulell[fila][columna];
-
-        // Check if the player has a winning combination in any row on the board after the current move
         if (taulell[fila][0] == jugador && taulell[fila][1] == jugador && taulell[fila][2] == jugador) {
             return true;
         }
-        // Check if the player has a winning combination in any column on the board after the current move
         if (taulell[0][columna] == jugador && taulell[1][columna] == jugador && taulell[2][columna] == jugador) {
             return true;
         }
-        // Check if the player has a winning combination in the main diagonal (top-left to bottom-right) on the board after the current move
         if (fila == columna) {
             if (taulell[0][0] == jugador && taulell[1][1] == jugador && taulell[2][2] == jugador) {
                 return true;
             }
         }
-        // Check if the player has a winning combination in the secondary diagonal (top-right to bottom-left) on the board after the current move
         if (fila + columna == 2) {
             return taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador;
         }
-        // Return false if there is no winning combination for the player after the current move
         return false;
     }
 
@@ -165,6 +162,10 @@ public class Joc {
             FileWriter writer = new FileWriter(savedGameFile);
             writer.write(Integer.toString(torn));
             // Write a new line character to separate the player's turn from the taulell matrix
+            writer.write(System.lineSeparator());
+
+            // Write the size of the board to the second line of the file
+            writer.write(Integer.toString(taulell.length));
             writer.write(System.lineSeparator());
 
             // Write the contents of the taulell matrix to the rest of the lines
