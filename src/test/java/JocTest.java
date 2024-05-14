@@ -74,11 +74,7 @@ public class JocTest {
         joc.jugar(0, 0);
         for (int i = 0; i < joc.getTaulell().length; i++) {
             for (int j = 0; j < joc.getTaulell().length; j++) {
-                if (i == 0 && j == 0) {
-                    Assertions.assertTrue(joc.jugadaGuanyadora(i, j));
-                } else {
                     Assertions.assertFalse(joc.jugadaGuanyadora(i, j));
-                }
             }
         }
     }
@@ -87,7 +83,9 @@ public class JocTest {
     @org.junit.jupiter.api.Test
     void jugadaGuanyadora_taulellAmbFitxes(){
 
+        
         Joc joc = new Joc();
+        // jugador 1
         joc.novaPartida();
         joc.jugar(0, 0);
         joc.jugar(0, 1);
@@ -95,11 +93,28 @@ public class JocTest {
         joc.jugar(1, 1);
         joc.jugar(2, 0);
         Assertions.assertTrue(joc.jugadaGuanyadora(0, 0));
-        Assertions.assertTrue(joc.jugadaGuanyadora(0, 1));
+        Assertions.assertFalse(joc.jugadaGuanyadora(0, 1));
         Assertions.assertTrue(joc.jugadaGuanyadora(1, 0));
-        Assertions.assertTrue(joc.jugadaGuanyadora(1, 1));
+        Assertions.assertFalse(joc.jugadaGuanyadora(1, 1));
         Assertions.assertTrue(joc.jugadaGuanyadora(2, 0));
 
+
+
+        // jugador 2
+        joc.novaPartida();
+        joc.jugar(0, 0);
+        joc.jugar(0, 1);
+        joc.jugar(1, 0);
+        joc.jugar(1, 1);
+        joc.jugar(3, 0);
+        joc.jugar(2, 1);
+        Assertions.assertFalse(joc.jugadaGuanyadora(0, 0));
+        Assertions.assertTrue(joc.jugadaGuanyadora(0, 1));
+        Assertions.assertFalse(joc.jugadaGuanyadora(1, 0));
+        Assertions.assertTrue(joc.jugadaGuanyadora(1, 1));
+        Assertions.assertFalse(joc.jugadaGuanyadora(3, 0));
+        Assertions.assertTrue(joc.jugadaGuanyadora(2, 1));
+        
         
 
 

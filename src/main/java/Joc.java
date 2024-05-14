@@ -125,7 +125,7 @@ public class Joc {
 
     // check consecutive cells horizontally
     for (int i = 0; i < taulell.length; i++) {
-        if (taulell[fila][i] == jugador) {
+        if (taulell[fila][i] == jugador && taulell[fila][i] != ' ') {
             count++;
         } else {
             count = 0;
@@ -140,8 +140,10 @@ public class Joc {
 
     // check consecutive cells vertically
         for (char[] chars : taulell) {
-            if (chars[columna] == jugador) count++;
-            else count = 0;
+            if (chars[columna] == jugador && taulell[fila][columna] != ' ') 
+            count++;
+            else 
+            count = 0;
 
             if (count == 3) return true;
         }
@@ -155,7 +157,7 @@ public class Joc {
     int col = columna - Math.min(fila, columna);
     // check cells diagonally 1
     while (row < taulell.length && col < taulell.length) {
-        if (taulell[row][col] == jugador) {
+        if (taulell[row][col] == jugador && taulell[fila][columna] != ' ') {
             count++;
         } else {
             count = 0;
@@ -174,7 +176,7 @@ public class Joc {
     row = fila - Math.min(fila, taulell.length - 1 - columna);
     col = columna + Math.min(fila, taulell.length - 1 - columna);
     while (row < taulell.length && col >= 0) {
-        if (taulell[row][col] == jugador) {
+        if (taulell[row][col] == jugador && taulell[fila][columna] != ' ') {
             count++;
         } else {
             count = 0;
