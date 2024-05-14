@@ -69,18 +69,26 @@ public class Tui {
             System.out.println("Introduzca un número entre 3 y 10");
             tamanoMostrador = sc.nextInt();
         }
+
+        // next boolean
+        System.out.println("Quieres jugar con AI? (true/false)");
+        boolean ai = sc.nextBoolean();
+
+
         // Save the new size of the board to the configuration file
-        guardarConfiguracion(tamanoMostrador);
+        guardarConfiguracion(tamanoMostrador, ai);
 
 
     }
 
     // method to save the new size of the board to the configuration file
-    private void guardarConfiguracion(int tamanoMostrador) {
+    private void guardarConfiguracion(int tamanoMostrador, boolean ai) {
         try {
             // Write the new size of the board to the configuration file
             FileWriter myWriter = new FileWriter("C://files/config.txt");
             myWriter.write(String.valueOf(tamanoMostrador));
+            myWriter.write("\n");
+            myWriter.write(String.valueOf(ai));
             myWriter.close();
             System.out.println("Configuración guardada correctamente");
         } catch (IOException e) {

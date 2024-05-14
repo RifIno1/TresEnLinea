@@ -145,15 +145,10 @@ public class Joc {
 
     // check consecutive cells vertically
     for (int i = 0; i < taulell.length; i++) {
-        if (taulell[i][columna] == jugador) {
-            count++;
-        } else {
-            count = 0;
-        }
+        if (taulell[i][columna] == jugador) count++;
+        else count = 0;
 
-        if (count == 3) {
-            return true;
-        }
+        if (count == 3) return true;
     }
 
     count = 0;
@@ -171,15 +166,15 @@ public class Joc {
             count = 0;
         }
 
-        if (count == 3) {
-            return true;
-        }
+        if (count == 3) return true;
+        
         // increment row and col
         row++;
         col++;
     }
-    count = 0;
 
+
+    count = 0; // empieza de 0
     // check cells diagonally 2 
     row = fila - Math.min(fila, taulell.length - 1 - columna);
     col = columna + Math.min(fila, taulell.length - 1 - columna);
@@ -197,6 +192,7 @@ public class Joc {
         row++;
         col--;
     }
+    // si no hay 3 in count returna false
     return false;
 }
 
@@ -243,6 +239,18 @@ public class Joc {
             e.printStackTrace();
         }
     }
+
+
+    // “minimax” nou mètode recursiu que rep un taulell, i que retorna un array d’enters que representa la casella on la IA hauria de jugar per intentar guanyar
+    public int[] minimax(char[][] taulell, int profunditat, boolean maximizant) {
+
+
+        return null;
+    }
+
+        
+
+
 
 
 
