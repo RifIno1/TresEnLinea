@@ -213,24 +213,7 @@ public class Joc {
             File savedGameFile = new File(savedGamesFolder, fileName);
 
             // Write the current player's turn to the first line of the file
-            FileWriter writer = new FileWriter(savedGameFile);
-            writer.write(Integer.toString(torn));
-            // Write a new line character to separate the player's turn from the taulell matrix
-            writer.write(System.lineSeparator());
-
-            // Write the size of the board to the second line of the file
-            writer.write(Integer.toString(taulell.length));
-            writer.write(System.lineSeparator());
-
-            // Write the contents of the taulell matrix to the rest of the lines
-            for (char[] row : taulell) {
-                for (char cell : row) {
-                    // Write each cell of the taulell matrix to the file
-                    writer.write(cell);
-                }
-                // Write a new line character to separate each row of the taulell matrix
-                writer.write(System.lineSeparator());
-            }
+            FileWriter writer = getFileWriter(savedGameFile);
 
             writer.close();
             // Display a message indicating that the current game has been saved successfully to the file path
@@ -238,6 +221,28 @@ public class Joc {
         } catch (Exception e) {
             System.out.println("no guardada");
         }
+    }
+
+    private FileWriter getFileWriter(File savedGameFile) throws IOException {
+        FileWriter writer = new FileWriter(savedGameFile);
+        writer.write(Integer.toString(torn));
+        // Write a new line character to separate the player's turn from the taulell matrix
+        writer.write(System.lineSeparator());
+
+        // Write the size of the board to the second line of the file
+        writer.write(Integer.toString(taulell.length));
+        writer.write(System.lineSeparator());
+
+        // Write the contents of the taulell matrix to the rest of the lines
+        for (char[] row : taulell) {
+            for (char cell : row) {
+                // Write each cell of the taulell matrix to the file
+                writer.write(cell);
+            }
+            // Write a new line character to separate each row of the taulell matrix
+            writer.write(System.lineSeparator());
+        }
+        return writer;
     }
 
 
