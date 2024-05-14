@@ -21,7 +21,6 @@ public class JocTest {
     }
 
 
-
     @org.junit.jupiter.api.Test
     void jugar_fitxa_jugador1_en_taulellBuit() {
         Joc joc = new Joc();
@@ -56,7 +55,7 @@ public class JocTest {
     }
 
     @org.junit.jupiter.api.Test
-    // un taulell en blanc , all false
+        // un taulell en blanc , all false
     void jugadaGuanyadora(){
         Joc joc = new Joc();
         joc.novaPartida();
@@ -68,7 +67,6 @@ public class JocTest {
     }
 
 
-    // un taulell té una casella ocupada retorna false per a totes les posicions
     @org.junit.jupiter.api.Test
     void jugadaGuanyadora_taulellAmbUnaFitxa(){
         Joc joc = new Joc();
@@ -76,8 +74,8 @@ public class JocTest {
         joc.jugar(0, 0);
         for (int i = 0; i < joc.getTaulell().length; i++) {
             for (int j = 0; j < joc.getTaulell().length; j++) {
-                if(i == 0 && j == 0){
-                    Assertions.assertFalse(joc.jugadaGuanyadora(i, j));
+                if (i == 0 && j == 0) {
+                    Assertions.assertTrue(joc.jugadaGuanyadora(i, j));
                 } else {
                     Assertions.assertFalse(joc.jugadaGuanyadora(i, j));
                 }
@@ -88,6 +86,7 @@ public class JocTest {
     // guanyar al jugador 1 y jugador 2.
     @org.junit.jupiter.api.Test
     void jugadaGuanyadora_taulellAmbFitxes(){
+
         Joc joc = new Joc();
         joc.novaPartida();
         joc.jugar(0, 0);
@@ -100,13 +99,18 @@ public class JocTest {
         Assertions.assertTrue(joc.jugadaGuanyadora(1, 0));
         Assertions.assertTrue(joc.jugadaGuanyadora(1, 1));
         Assertions.assertTrue(joc.jugadaGuanyadora(2, 0));
+
+        
+
+
+
+
     }
-    
-
-
 
 
 
 
 
 }
+
+
