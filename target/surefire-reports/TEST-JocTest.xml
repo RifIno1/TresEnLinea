@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="JocTest" time="0.15" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="JocTest" time="0.103" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\pcc\AppData\Local\Temp\surefire9722924326945408069\surefirebooter1784714356909145772.jar C:\Users\pcc\AppData\Local\Temp\surefire9722924326945408069 2024-05-14T19-29-09_422-jvmRun1 surefire2273104073294634046tmp surefire_05979901470541800573tmp"/>
+    <property name="sun.java.command" value="C:\Users\pcc\AppData\Local\Temp\surefire16871342156572956247\surefirebooter2935047528757477256.jar C:\Users\pcc\AppData\Local\Temp\surefire16871342156572956247 2024-05-14T22-38-07_829-jvmRun1 surefire13373813758228536404tmp surefire_0932460393393587193tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\pcc\IdeaProjects\TresEnLinea\target\test-classes;C:\Users\pcc\IdeaProjects\TresEnLinea\target\classes;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\pcc\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\pcc\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;C:\Users\pcc\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\pcc\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\pcc\AppData\Local\Temp\surefire9722924326945408069\surefirebooter1784714356909145772.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\pcc\AppData\Local\Temp\surefire16871342156572956247\surefirebooter2935047528757477256.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
@@ -59,10 +59,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="jugar_fitxa_jugador1_en_taulellBuit" classname="JocTest" time="0.117"/>
-  <testcase name="novaPartida_torn_new" classname="JocTest" time="0.003"/>
+  <testcase name="jugar_fitxa_jugador1_en_taulellBuit" classname="JocTest" time="0.075"/>
+  <testcase name="novaPartida_torn_new" classname="JocTest" time="0"/>
   <testcase name="jugar_noPosarFitxa_en_posicioJaOcupada" classname="JocTest" time="0.005"/>
-  <testcase name="jugar_fitxa_jugador2_en_taulellAmbFitxa" classname="JocTest" time="0.003"/>
-  <testcase name="novaPartida_torn" classname="JocTest" time="0.003"/>
-  <testcase name="jugadaGuanyadora_test" classname="JocTest" time="0.004"/>
+  <testcase name="jugar_fitxa_jugador2_en_taulellAmbFitxa" classname="JocTest" time="0.004"/>
+  <testcase name="jugadaGuanyadora_taulellBuit" classname="JocTest" time="0.004"/>
+  <testcase name="novaPartida_torn" classname="JocTest" time="0.002"/>
 </testsuite>

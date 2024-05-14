@@ -55,27 +55,18 @@ public class JocTest {
         Assertions.assertEquals(2, joc.getTorn());
     }
 
+    // methode test for :Starting with a blank board: Ensure that the method call returns "false" for all positions.
     @org.junit.jupiter.api.Test
-    void jugadaGuanyadora_test() {
+    void jugadaGuanyadora_taulellBuit() {
         Joc joc = new Joc();
-        char[][] taulell = new char[3][3];
         joc.novaPartida();
-        taulell[0][0] = 'X';
-        taulell[0][1] = 'X';
-        taulell[0][2] = 'X';
-        Assertions.assertTrue(joc.jugadaGuanyadora(0, 2));
-        taulell[0][0] = 'O';
-        taulell[1][0] = 'O';
-        taulell[2][0] = 'O';
-        Assertions.assertTrue(joc.jugadaGuanyadora(2, 0));
-        taulell[0][0] = 'X';
-        taulell[1][1] = 'X';
-        taulell[2][2] = 'X';
-        Assertions.assertTrue(joc.jugadaGuanyadora(2, 2));
-        taulell[0][2] = 'O';
-        taulell[1][1] = 'O';
-        taulell[2][0] = 'O';
-        Assertions.assertTrue(joc.jugadaGuanyadora(2, 0));
+        for (int i = 0; i < joc.getTaulell().length; i++) {
+            for (int j = 0; j < joc.getTaulell().length; j++) {
+                Assertions.assertTrue(joc.jugadaGuanyadora(i, j));
+            }
+        }
     }
+
+
 
 }
