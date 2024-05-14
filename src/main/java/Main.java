@@ -35,17 +35,18 @@ public class Main {
             case 1:
                 // new game
                 joc.novaPartida();
-                if(getSecondBoolean() == true){
-                    play_with_ai(joc, tui);
+                if(getSecondBoolean()){
+                    play_with_ai();
                 } else {
                     play_with_friend(joc, tui);
                 }
                 break;
             case 2:
                 // load game and continue playing
+                // check if there is a saved game to load
                 joc.CarregarPartida();
-                if(getSecondBoolean() == true){
-                    play_with_ai(joc, tui);
+                if(getSecondBoolean()){
+                    play_with_ai();
                 } else {
                     play_with_friend(joc, tui);
                 }
@@ -73,6 +74,10 @@ public class Main {
         int[] jugada;
         // loop for the game until there is a winner or a draw 
         while (!guanyador) {
+            // check if there are a tauller
+            if(joc.getTaulell() == null){
+                switchMenu(tui.mostrarMenu(), joc, tui);
+            }
             // show the board and get the move
             tui.mostrarTauller(joc.getTaulell(), joc.getTorn());
             // get the move from the player
@@ -94,8 +99,9 @@ public class Main {
         switchMenu(tui.mostrarMenu(), joc, tui);
     }
 
-    public static void play_with_ai(Joc joc, Tui tui) {
-        // use joc.minimax to play with ai
+    public static void play_with_ai() {
+        // use joc.minimax to play with AI
+        
         
         
     }

@@ -33,7 +33,6 @@ public class Tui {
 
     // method to get the player's move (row and column) from the console
     public int[] recollirJugada() {
-        char[][] taulell;
         int[] jugada = new int[2];
         System.out.println("Introdueix la fila i la columna on vols posar la fitxa (0-9)");
         System.out.print("Fila: ");
@@ -50,6 +49,7 @@ public class Tui {
             System.out.println("Empat!");
         } else {
             System.out.println("Ha guanyat el jugador " + (guanyador == 1 ? "O" : "X"));
+            System.out.println("------------------------------");
         }
     }
 

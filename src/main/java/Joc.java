@@ -144,12 +144,12 @@ public class Joc {
     count = 0;
 
     // check consecutive cells vertically
-    for (int i = 0; i < taulell.length; i++) {
-        if (taulell[i][columna] == jugador) count++;
-        else count = 0;
+        for (char[] chars : taulell) {
+            if (chars[columna] == jugador) count++;
+            else count = 0;
 
-        if (count == 3) return true;
-    }
+            if (count == 3) return true;
+        }
 
     count = 0;
 
@@ -225,7 +225,7 @@ public class Joc {
             // Write the contents of the taulell matrix to the rest of the lines
             for (char[] row : taulell) {
                 for (char cell : row) {
-                    // Write each cell of the taulell matrix to the file 
+                    // Write each cell of the taulell matrix to the file
                     writer.write(cell);
                 }
                 // Write a new line character to separate each row of the taulell matrix
@@ -235,18 +235,15 @@ public class Joc {
             writer.close();
             // Display a message indicating that the current game has been saved successfully to the file path
             System.out.println("Partida guardada correctamente en " + savedGameFile.getAbsolutePath());
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("no guardada");
         }
     }
 
 
     // “minimax” nou mètode recursiu que rep un taulell, i que retorna un array d’enters que representa la casella on la IA hauria de jugar per intentar guanyar
-    public int[] minimax(char[][] taulell, int profunditat, boolean maximizant) {
+    // public int[] minimax(char[][] taulell, int profunditat, boolean maximizant) {
 
-
-        return null;
-    }
 
         
 
