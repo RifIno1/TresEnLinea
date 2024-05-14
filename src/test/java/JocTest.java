@@ -106,13 +106,13 @@ public class JocTest {
         joc.jugar(0, 1);
         joc.jugar(1, 0);
         joc.jugar(1, 1);
-        joc.jugar(3, 0);
+        joc.jugar(2, 2);
         joc.jugar(2, 1);
         Assertions.assertFalse(joc.jugadaGuanyadora(0, 0));
         Assertions.assertTrue(joc.jugadaGuanyadora(0, 1));
         Assertions.assertFalse(joc.jugadaGuanyadora(1, 0));
         Assertions.assertTrue(joc.jugadaGuanyadora(1, 1));
-        Assertions.assertFalse(joc.jugadaGuanyadora(3, 0));
+        Assertions.assertFalse(joc.jugadaGuanyadora(2, 2));
         Assertions.assertTrue(joc.jugadaGuanyadora(2, 1));
         
         
