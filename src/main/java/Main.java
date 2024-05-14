@@ -90,7 +90,7 @@ public class Main {
             }
             // else play the move and check if there is a winner
             joc.jugar(jugada[0], jugada[1]);
-            guanyador = joc.jugadaGuanyadora(jugada[0], jugada[1]);
+            guanyador = joc.jugadaGuanyadora(jugada[0], jugada[1]) ;
 
         }
         // show the board and the winner

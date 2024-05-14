@@ -131,7 +131,7 @@ public class Joc {
             count = 0;
         }
 
-        if (count == 4) {
+        if (count == 3) {
             return true;
         }
     }
@@ -143,7 +143,7 @@ public class Joc {
             if (chars[columna] == jugador) count++;
             else count = 0;
 
-            if (count == 4) return true;
+            if (count == 3) return true;
         }
 
     count = 0;
@@ -161,7 +161,7 @@ public class Joc {
             count = 0;
         }
 
-        if (count == 4) return true;
+        if (count == 3) return true;
         
         // increment row and col
         row++;
@@ -180,7 +180,7 @@ public class Joc {
             count = 0;
         }
 
-        if (count == 4) {
+        if (count == 3) {
             return true;
         }
         // increment row and decrement col
