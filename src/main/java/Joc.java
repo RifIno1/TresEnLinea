@@ -136,7 +136,7 @@ public class Joc {
             count = 0;
         }
 
-        if (count == 3) {
+        if (count == 4) {
             return true;
         }
     }
@@ -148,7 +148,7 @@ public class Joc {
             if (chars[columna] == jugador) count++;
             else count = 0;
 
-            if (count == 3) return true;
+            if (count == 4) return true;
         }
 
     count = 0;
@@ -166,7 +166,7 @@ public class Joc {
             count = 0;
         }
 
-        if (count == 3) return true;
+        if (count == 4) return true;
         
         // increment row and col
         row++;
@@ -185,7 +185,7 @@ public class Joc {
             count = 0;
         }
 
-        if (count == 3) {
+        if (count == 4) {
             return true;
         }
         // increment row and decrement col
@@ -242,10 +242,7 @@ public class Joc {
 
 
     // “minimax” nou mètode recursiu que rep un taulell, i que retorna un array d’enters que representa la casella on la IA hauria de jugar per intentar guanyar
-    // public int[] minimax(char[][] taulell, int profunditat, boolean maximizant) {
-
-
-        
+    // public int[] minimax() {
 
 
 
