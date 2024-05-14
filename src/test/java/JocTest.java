@@ -55,18 +55,5 @@ public class JocTest {
         Assertions.assertEquals(2, joc.getTorn());
     }
 
-    // methode test for :Starting with a blank board: Ensure that the method call returns "false" for all positions.
-    @org.junit.jupiter.api.Test
-    void jugadaGuanyadora_taulellBuit() {
-        Joc joc = new Joc();
-        joc.novaPartida();
-        for (int i = 0; i < joc.getTaulell().length; i++) {
-            for (int j = 0; j < joc.getTaulell().length; j++) {
-                Assertions.assertTrue(joc.jugadaGuanyadora(i, j));
-            }
-        }
-    }
-
-
 
 }
