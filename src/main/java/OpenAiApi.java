@@ -3,9 +3,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.stream.Collectors;
 
-public class Api {
-
-
+public class OpenAiApi {
 
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
     private static final String API_KEY = GetApiKey.sendPostRequest();

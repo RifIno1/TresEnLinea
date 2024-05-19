@@ -102,7 +102,7 @@ public class Main {
 
     public static void play_with_ai(Joc joc, Tui tui) {
         // from API
-        API api = new API();
+        OpenAiApi openAiApi = new OpenAiApi();
 
         // for the torn X use recollirJugada and for the turn O use api.main
         boolean guanyador = false;
@@ -112,7 +112,7 @@ public class Main {
             if (joc.getTorn() == 1) {
                 jugada = tui.recollirJugada();
             } else {
-                 jugada = api.getXY(joc.getTaulell());
+                 jugada = openAiApi.getXY(joc.getTaulell());
             }
             if (jugada[0] == -1 && jugada[1] == -1) {
                 joc.guardarPartida();
