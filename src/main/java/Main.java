@@ -106,13 +106,13 @@ public class Main {
 
         // for the torn X use recollirJugada and for the turn O use api.main
         boolean guanyador = false;
-        int[] jugada;
+        int[] jugada = new int[0];
         while (!guanyador) {
             tui.mostrarTauller(joc.getTaulell(), joc.getTorn());
             if (joc.getTorn() == 1) {
                 jugada = tui.recollirJugada();
             } else {
-                jugada = api.getXY(joc.getTaulell());
+                // jugada = api.getXY(joc.getTaulell());
             }
             if (jugada[0] == -1 && jugada[1] == -1) {
                 joc.guardarPartida();

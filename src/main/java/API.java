@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class API {
+    /*
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
     private static final String API_KEY = "sk-proj-60QTC8E7JwHihhSnzAEnT3BlbkFJbjPONX7PkC7KXXLlm1gO";
     private static final String MODEL = "gpt-3.5-turbo";
@@ -83,4 +84,6 @@ public class API {
 
 
     }
+
+     */
 }
