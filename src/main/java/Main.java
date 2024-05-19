@@ -101,6 +101,7 @@ public class Main {
 
 
     public static void play_with_ai(Joc joc, Tui tui) {
+        // from API
         API api = new API();
 
         // for the torn X use recollirJugada and for the turn O use api.main
