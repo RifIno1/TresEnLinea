@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class API {
-
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
     private static final String API_KEY = "sk-proj-60QTC8E7JwHihhSnzAEnT3BlbkFJbjPONX7PkC7KXXLlm1gO";
     private static final String MODEL = "gpt-3.5-turbo";
@@ -20,14 +19,7 @@ public class API {
             connection.setRequestProperty("Authorization", "Bearer " + API_KEY);
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setDoOutput(true);
-            String question =
-                    "to win you need to have 3 O in a row, column or diagonal, " +
-                            "don't play in a full cell, symbol - means empty cell, " +
-                            "in the response write only X,Y and don't write anything else." +
-                            "X and Y is between 0 and the number of lines";
-            String prompt = question + gameInstructions;
-
-            String body = "{\"model\": \"" + MODEL + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + prompt + "\"}]}";
+            String body = getString(gameInstructions);
             try (OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream())) {
                 writer.write(body);
             }
@@ -42,6 +34,18 @@ public class API {
             System.out.println(e.getMessage());
         }
         return null;
+    }
+
+    private static String getString(String gameInstructions) {
+        String question =
+                "to win you need to have 3 O in a row, column or diagonal, " +
+                        "don't play in a full cell, symbol - means empty cell, " +
+                        "in the response write only X,Y and don't write anything else." +
+                        "X and Y is between 0 and the number of lines";
+        String prompt = question + gameInstructions;
+
+        String body = "{\"model\": \"" + MODEL + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + prompt + "\"}]}";
+        return body;
     }
 
     public static String extractMessageFromJSONResponse(String response) {
