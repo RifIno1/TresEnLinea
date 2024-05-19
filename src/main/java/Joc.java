@@ -8,21 +8,20 @@ import java.util.Scanner;
 
 public class Joc {
 
-    private char [][] taulell;
+    private char[][] taulell;
     private int torn;
 
 
     public char[][] getTaulell() {
         return taulell;
     }
-    
+
     public int getTorn() {
         return torn;
     }
 
     // method to start a new game and initialize the board
-    public void novaPartida()
-    {
+    public void novaPartida() {
         int mida = 3;
         try {
             // Create a Scanner object to read the contents of the config.txt file
@@ -93,7 +92,6 @@ public class Joc {
                 taulell[i] = reader.nextLine().toCharArray();
             }
 
-            
 
             reader.close();
             // Display a message indicating that the saved game has been loaded successfully from the file path
@@ -102,7 +100,7 @@ public class Joc {
             System.out.println("no puede carregar");
         }
     }
-    
+
     // method to play a move on the board based on the current player's turn and the selected cell (row, column) by the player
     public void jugar(int fila, int columna) {
         // Check if the cell is empty before making a move in that cell to avoid overwriting existing moves by the players
@@ -120,78 +118,78 @@ public class Joc {
 
     // method to check if the current move by the player results in a winning combination on the board
     public boolean jugadaGuanyadora(int fila, int columna) {
-    char jugador = taulell[fila][columna];
-    int count = 0;
+        char jugador = taulell[fila][columna];
+        int count = 0;
 
-    // check consecutive cells horizontally
-    for (int i = 0; i < taulell.length; i++) {
-        if (taulell[fila][i] == jugador && taulell[fila][i] != ' ') {
-            count++;
-        } else {
-            count = 0;
+        // check consecutive cells horizontally
+        for (int i = 0; i < taulell.length; i++) {
+            if (taulell[fila][i] == jugador && taulell[fila][i] != ' ') {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            if (count == 3) {
+                return true;
+            }
         }
 
-        if (count == 3) {
-            return true;
-        }
-    }
+        count = 0;
 
-    count = 0;
-
-    // check consecutive cells vertically
+        // check consecutive cells vertically
         for (char[] chars : taulell) {
-            if (chars[columna] == jugador && taulell[fila][columna] != ' ') 
-            count++;
-            else 
-            count = 0;
+            if (chars[columna] == jugador && taulell[fila][columna] != ' ')
+                count++;
+            else
+                count = 0;
 
             if (count == 3) return true;
         }
 
-    count = 0;
+        count = 0;
 
-    // check cells diagonally 1     
-    // calcul from where row should start
-    int row = fila - Math.min(fila, columna);
-    // calcul from where col should start
-    int col = columna - Math.min(fila, columna);
-    // check cells diagonally 1
-    while (row < taulell.length && col < taulell.length) {
-        if (taulell[row][col] == jugador && taulell[fila][columna] != ' ') {
-            count++;
-        } else {
-            count = 0;
+        // check cells diagonally 1
+        // calcul from where row should start
+        int row = fila - Math.min(fila, columna);
+        // calcul from where col should start
+        int col = columna - Math.min(fila, columna);
+        // check cells diagonally 1
+        while (row < taulell.length && col < taulell.length) {
+            if (taulell[row][col] == jugador && taulell[fila][columna] != ' ') {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            if (count == 3) return true;
+
+            // increment row and col
+            row++;
+            col++;
         }
 
-        if (count == 3) return true;
-        
-        // increment row and col
-        row++;
-        col++;
+
+        count = 0; // empieza de 0
+        // check cells diagonally 2
+        row = fila - Math.min(fila, taulell.length - 1 - columna);
+        col = columna + Math.min(fila, taulell.length - 1 - columna);
+        while (row < taulell.length && col >= 0) {
+            if (taulell[row][col] == jugador && taulell[fila][columna] != ' ') {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            if (count == 3) {
+                return true;
+            }
+            // increment row and decrement col
+            row++;
+            col--;
+        }
+        // si no hay 3 in count returna false
+        return false;
     }
-
-
-    count = 0; // empieza de 0
-    // check cells diagonally 2 
-    row = fila - Math.min(fila, taulell.length - 1 - columna);
-    col = columna + Math.min(fila, taulell.length - 1 - columna);
-    while (row < taulell.length && col >= 0) {
-        if (taulell[row][col] == jugador && taulell[fila][columna] != ' ') {
-            count++;
-        } else {
-            count = 0;
-        }
-
-        if (count == 3) {
-            return true;
-        }
-        // increment row and decrement col
-        row++;
-        col--;
-    }
-    // si no hay 3 in count returna false
-    return false;
-}
 
 
     public void guardarPartida() {
@@ -242,12 +240,6 @@ public class Joc {
         return writer;
     }
 
-
-    // “minimax” nou mètode recursiu que rep un taulell, i que retorna un array d’enters que representa la casella on la IA hauria de jugar per intentar guanyar
-    // public int[] minimax() {
-
-
-
-
+    
 
 }

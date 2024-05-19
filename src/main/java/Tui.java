@@ -31,6 +31,25 @@ public class Tui {
         }
     }
 
+    // method to return the board as a string to be used in the chatGPT method
+    public String taulellToString(char[][] taulell) {
+        StringBuilder taulellString = new StringBuilder();
+        for (int i = 0; i < taulell.length; i++) {
+            taulellString.append("[");
+            for (int j = 0; j < taulell[i].length; j++) {
+                taulellString.append(taulell[i][j]);
+                if (j < taulell[i].length - 1) {
+                    taulellString.append(",");
+                }
+            }
+            taulellString.append("]");
+            if (i < taulell.length - 1) {
+                taulellString.append(",");
+            }
+        }
+        return taulellString.toString();
+    }
+
     // method to get the player's move (row and column) from the console
     public int[] recollirJugada() {
         int[] jugada = new int[2];

@@ -36,7 +36,7 @@ public class Main {
                 // new game
                 joc.novaPartida();
                 if(getSecondBoolean()){
-                    play_with_ai();
+                    play_with_ai(joc, tui);
                 } else {
                     play_with_friend(joc, tui);
                 }
@@ -46,7 +46,7 @@ public class Main {
                 // check if there is a saved game to load
                 joc.CarregarPartida();
                 if(getSecondBoolean()){
-                    play_with_ai();
+                    play_with_ai(joc, tui);
                 } else {
                     play_with_friend(joc, tui);
                 }
@@ -90,7 +90,7 @@ public class Main {
             }
             // else play the move and check if there is a winner
             joc.jugar(jugada[0], jugada[1]);
-            guanyador = joc.jugadaGuanyadora(jugada[0], jugada[1]) ;
+            guanyador = joc.jugadaGuanyadora(jugada[0], jugada[1]);
 
         }
         // show the board and the winner
@@ -99,11 +99,34 @@ public class Main {
         switchMenu(tui.mostrarMenu(), joc, tui);
     }
 
-    public static void play_with_ai() {
-        // use joc.minimax to play with AI
+
+    public static void play_with_ai(Joc joc, Tui tui) {
+        OpenAiAPI api = new OpenAiAPI();
+
+        // for the torn X use recollirJugada and for the turn O use api.main
+        boolean guanyador = false;
+        int[] jugada;
+        while (!guanyador) {
+            tui.mostrarTauller(joc.getTaulell(), joc.getTorn());
+            if (joc.getTorn() == 1) {
+                jugada = tui.recollirJugada();
+            } else {
+                jugada = api.main(joc.getTaulell());
+            }
+            if (jugada[0] == -1 && jugada[1] == -1) {
+                joc.guardarPartida();
+                switchMenu(tui.mostrarMenu(), joc, tui);
+                break;
+            }
+            joc.jugar(jugada[0], jugada[1]);
+            guanyador = joc.jugadaGuanyadora(jugada[0], jugada[1]);
+        }
+        tui.mostrarTauller(joc.getTaulell(), joc.getTorn());
+        tui.fiDePartida(guanyador ? joc.getTorn() : 0);
+        switchMenu(tui.mostrarMenu(), joc, tui);
         
-        
-        
+
+    
     }
 
 
