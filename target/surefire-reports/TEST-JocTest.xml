@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="JocTest" time="0.005" tests="0" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="JocTest" time="0.088" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\pcc\IdeaProjects\TresEnLinea\target\test-classes;C:\Users\pcc\IdeaProjects\TresEnLinea\target\classes;C:\Users\pcc\.m2\repository\org\json\json\20210307\json-20210307.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\pcc\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\pcc\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\pcc\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="java.class.path" value="C:\Users\pcc\IdeaProjects\TresEnLinea\target\test-classes;C:\Users\pcc\IdeaProjects\TresEnLinea\target\classes;C:\Users\pcc\.m2\repository\org\json\json\20210307\json-20210307.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\pcc\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\pcc\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;C:\Users\pcc\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\pcc\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\pcc\AppData\Local\Temp\surefire3939972729173798088\surefirebooter18304809295208466753.jar C:\Users\pcc\AppData\Local\Temp\surefire3939972729173798088 2024-05-19T15-54-43_211-jvmRun1 surefire14614120493994787473tmp surefire_012403947147302487229tmp"/>
+    <property name="sun.java.command" value="C:\Users\pcc\AppData\Local\Temp\surefire2258570182679158877\surefirebooter8932595044858832875.jar C:\Users\pcc\AppData\Local\Temp\surefire2258570182679158877 2024-05-19T16-02-23_591-jvmRun1 surefire3954019770238021642tmp surefire_014564858618156197180tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\pcc\IdeaProjects\TresEnLinea\target\test-classes;C:\Users\pcc\IdeaProjects\TresEnLinea\target\classes;C:\Users\pcc\.m2\repository\org\json\json\20210307\json-20210307.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\pcc\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\pcc\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\pcc\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\pcc\IdeaProjects\TresEnLinea\target\test-classes;C:\Users\pcc\IdeaProjects\TresEnLinea\target\classes;C:\Users\pcc\.m2\repository\org\json\json\20210307\json-20210307.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\pcc\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\pcc\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;C:\Users\pcc\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\pcc\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\pcc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\pcc"/>
     <property name="user.language" value="fr"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\pcc\AppData\Local\Temp\surefire3939972729173798088\surefirebooter18304809295208466753.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\pcc\AppData\Local\Temp\surefire2258570182679158877\surefirebooter8932595044858832875.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
@@ -59,4 +59,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
+  <testcase name="jugadaGuanyadora_taulellAmbFitxes" classname="JocTest" time="0.039"/>
+  <testcase name="jugadaGuanyadora" classname="JocTest" time="0.003"/>
+  <testcase name="jugar_fitxa_jugador1_en_taulellBuit" classname="JocTest" time="0.004"/>
+  <testcase name="novaPartida_torn_new" classname="JocTest" time="0.003"/>
+  <testcase name="jugar_noPosarFitxa_en_posicioJaOcupada" classname="JocTest" time="0.003"/>
+  <testcase name="jugar_fitxa_jugador2_en_taulellAmbFitxa" classname="JocTest" time="0.005"/>
+  <testcase name="novaPartida_torn" classname="JocTest" time="0.002"/>
+  <testcase name="jugadaGuanyadora_taulellAmbUnaFitxa" classname="JocTest" time="0.002"/>
 </testsuite>

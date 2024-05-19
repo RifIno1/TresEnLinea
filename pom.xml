@@ -15,16 +15,17 @@
     </properties>
 
     <dependencies>
-       
+        <!-- JSON -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20210307</version>
         </dependency>
+
         <!-- Parameterized Tests -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
+            <artifactId>junit-jupiter-engine</artifactId>
             <version>5.5.2</version>
             <!--<scope>test</scope>-->
         </dependency>
