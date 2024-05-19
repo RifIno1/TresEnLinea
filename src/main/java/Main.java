@@ -111,7 +111,7 @@ public class Main {
             if (joc.getTorn() == 1) {
                 jugada = tui.recollirJugada();
             } else {
-                jugada = api.main(joc.getTaulell());
+                jugada = OpenAiAPI.getXY(joc.getTaulell());
             }
             if (jugada[0] == -1 && jugada[1] == -1) {
                 joc.guardarPartida();
