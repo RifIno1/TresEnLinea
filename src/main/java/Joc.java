@@ -22,12 +22,12 @@ public class Joc {
 
     // method to start a new game and initialize the board
     public void novaPartida() {
-        int mida = 3;
+        int tabla = 3;
         try {
             // Create a Scanner object to read the contents of the config.txt file
             Scanner reader = new Scanner(new File("C://files/config.txt"));
             // Read the size of the board from the first line of the file and convert it to an integer value
-            mida = reader.nextInt();
+            tabla = reader.nextInt();
             // Close the Scanner object after reading the file
             reader.close();
         } catch (IOException e) {
@@ -35,7 +35,7 @@ public class Joc {
             System.out.println("No se puede leer el archivo de configuración");
         }
         // Create a new 3x3 board with empty cells represented by space characters ' '
-        taulell = new char[mida][mida];
+        taulell = new char[tabla][tabla];
         for (char[] chars : taulell) {
             Arrays.fill(chars, ' ');
         }
