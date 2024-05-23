@@ -220,23 +220,20 @@ public class Joc {
 
     private FileWriter getFileWriter(File savedGameFile) throws IOException {
         FileWriter writer = new FileWriter(savedGameFile);
-        writer.write(Integer.toString(torn));
-        // Write a new line character to separate the player's turn from the taulell matrix
-        writer.write(System.lineSeparator());
 
-        // Write the size of the board to the second line of the file
-        writer.write(Integer.toString(taulell.length));
-        writer.write(System.lineSeparator());
+        // Escribir el turno del jugador y una nueva línea
+        writer.write(torn + System.lineSeparator());
+        // Escribir el tamaño del tablero y una nueva línea
+        writer.write(taulell.length + System.lineSeparator());
 
-        // Write the contents of the taulell matrix to the rest of the lines
+        // Escribir el contenido del tablero
         for (char[] row : taulell) {
             for (char cell : row) {
-                // Write each cell of the taulell matrix to the file
                 writer.write(cell);
             }
-            // Write a new line character to separate each row of the taulell matrix
             writer.write(System.lineSeparator());
         }
+
         return writer;
     }
 
