@@ -257,6 +257,52 @@ public class Joc {
         return writer;
     }
 
+    Scanner sc = new Scanner(System.in);
+    // method to display the configuration option and get the new size of the board from the console
+    public void Configuracio() {
+        int tamanoMostrador;
+        System.out.println("Ingrese el nuevo tamaño del mostrador (mínimo 3, máximo 10):");
+        // Check if the input is an integer before reading the value
+        while (!sc.hasNextInt()) {
+            System.out.println("No es un numero !!");
+            sc.next();
+        }
+        // Read the new size of the board from the console
+        tamanoMostrador = sc.nextInt();
+        // Validate the input to ensure it is within the specified range (3-10)
+        while (tamanoMostrador < 3 || tamanoMostrador > 10) {
+            System.out.println("Introduzca un número entre 3 y 10");
+            tamanoMostrador = sc.nextInt();
+        }
+
+        // next boolean
+        System.out.println("Quieres jugar con AI? (true/false)");
+        boolean ai = sc.nextBoolean();
+
+
+        // Save the new size of the board to the configuration file
+        guardarConfiguracion(tamanoMostrador, ai);
+
+
+    }
+
+    // method to save the new size of the board to the configuration file
+    private void guardarConfiguracion(int tamanoMostrador, boolean ai) {
+        try {
+            // Write the new size of the board to the configuration file
+            FileWriter myWriter = new FileWriter("src/main/java/config.txt");
+            myWriter.write(String.valueOf(tamanoMostrador));
+            myWriter.write("\n");
+            myWriter.write(String.valueOf(ai));
+            myWriter.close();
+            System.out.println("Configuración guardada correctamente");
+        } catch (IOException e) {
+            System.out.println("An error occurred for saving the game.");
+
+
+        }
+    }
+
     
 
 }

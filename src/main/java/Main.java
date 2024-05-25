@@ -35,7 +35,7 @@ public class Main {
                 break;
             case 3:
                 // configuration to change the size of the board
-                tui.Configuracio();
+                joc.Configuracio();
                 switchMenu(tui.mostrarMenu(), joc, tui);
                 break;
             case 4:
