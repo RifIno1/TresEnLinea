@@ -1,3 +1,5 @@
+// fix ruta relativa por todoo
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;

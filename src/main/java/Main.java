@@ -1,6 +1,6 @@
 import java.io.File;
 import java.util.Scanner;
-
+// quitamos method get boolean de ai
 public class Main {
     public static void main(String[] args) 
     {

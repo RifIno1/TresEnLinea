@@ -1,3 +1,5 @@
+// anadir aqui methode get boolean ai
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
