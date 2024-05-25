@@ -1,5 +1,6 @@
-import java.io.File;
-import java.util.Scanner;
+import openAI.OpenAiApi;
+import utils.Joc;
+import utils.Tui;
 // quitamos method get boolean de ai
 public class Main {
     public static void main(String[] args) 
@@ -44,7 +45,7 @@ public class Main {
                 break;
             default:
                 // invalid option message and return to the menu
-                System.out.println("Opció no vàlida");
+                Tui.showMessage( "Opció no vàlida");
                 switchMenu(tui.mostrarMenu(), joc, tui);
                 break;
         }
@@ -107,11 +108,5 @@ public class Main {
         tui.mostrarTauller(joc.getTaulell(), joc.getTorn());
         tui.fiDePartida(guanyador ? joc.getTorn() : 0);
         switchMenu(tui.mostrarMenu(), joc, tui);
-        
-
-    
     }
-
-
-
 }
