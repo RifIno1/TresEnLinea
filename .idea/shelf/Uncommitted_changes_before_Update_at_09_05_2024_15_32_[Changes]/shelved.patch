@@ -1,0 +1,42 @@
+Index: src/main/java/Tui.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\r\n\r\npublic class Tui {\r\n\r\n    private final Scanner sc = new Scanner(System.in);\r\n\r\n    public int mostrarMenu() {\r\n        System.out.println(\"1. Nova Partida\");\r\n        System.out.println(\"2. Carregar Partida\");\r\n        System.out.println(\"3. Configuració\");\r\n        System.out.println(\"4. Sortir\");\r\n        System.out.print(\"Escull una opció: \");\r\n        return sc.nextInt();\r\n    }\r\n\r\n    public void mostrarTauller(char[][] taulell, int torn) {\r\n        System.out.println(\"Jugador\" + torn + \" : \" + (torn == 1 ? \"X\" : \"O\")); \r\n        for (int i = 0; i < taulell.length; i++) {\r\n            for (int j = 0; j < taulell[i].length; j++) {\r\n                System.out.print(taulell[i][j]);\r\n                if (j < taulell[i].length - 1) {\r\n                    System.out.print(\"|\");\r\n                }\r\n            }\r\n            System.out.println();\r\n            if (i < taulell.length - 1) {\r\n                System.out.println(\"-----\");\r\n            }\r\n        }\r\n    }\r\n\r\n    public int[] recollirJugada(){\r\n        System.out.print(\"Introdueix la fila: \");\r\n        while (!sc.hasNextInt()) {\r\n            System.out.println(\"Introdueix un número entre 0 i 2\");\r\n            sc.next();\r\n        }\r\n        int fila = sc.nextInt();\r\n        while (fila < 0 || fila > 2) {\r\n            System.out.println(\"Introdueix un número entre 0 i 2\");\r\n            fila = sc.nextInt();\r\n        }\r\n        System.out.print(\"Introdueix la columna: \");\r\n        while (!sc.hasNextInt()) {\r\n            System.out.println(\"Introdueix un número entre 0 i 2\");\r\n            sc.next();\r\n        }\r\n        int columna = sc.nextInt();\r\n        while (columna < 0 || columna > 2) {\r\n            System.out.println(\"Introdueix un número entre 0 i 2\");\r\n            columna = sc.nextInt();\r\n        }\r\n        return new int[]{fila, columna};\r\n\r\n\r\n        \r\n\r\n        \r\n    }\r\n\r\n    public void fiDePartida(int guanyador) {\r\n        if (guanyador == 0) {\r\n            System.out.println(\"Empat!\");\r\n        } else {\r\n            if (guanyador == 1) {\r\n                guanyador = 2;\r\n            } else {\r\n                guanyador = 1;\r\n            }\r\n            System.out.println(\"Ha guanyat el jugador \" + guanyador);\r\n        }\r\n    }\r\n\r\n    public void Configuracio(){\r\n        throw new UnsupportedOperationException();\r\n    }\r\n\r\n    public void Sortir(){\r\n        throw new UnsupportedOperationException();\r\n    }\r\n\r\n    \r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Tui.java b/src/main/java/Tui.java
+--- a/src/main/java/Tui.java	(revision 4b67401d0a3ca7ed81e929d080c27f21e82b7f9a)
++++ b/src/main/java/Tui.java	(date 1715183531802)
+@@ -71,9 +71,28 @@
+         }
+     }
+ 
+-    public void Configuracio(){
+-        throw new UnsupportedOperationException();
+-    }
++    public void Configuracio() {
++            int opcio;
++            System.out.println(" --- CCOONNFFIIGGUURRAACCIIOO --- ");
++            do {
++                System.out.println("1. Mida del taulell");
++                System.out.println("2. Tornar enrere");
++                System.out.print("Escull una opció: ");
++                opcio = sc.nextInt();
++                switch (opcio) {
++                    case 1:
++                        modificarMidaTaulell();
++                        break;
++                    case 2:
++                        return;
++                    default:
++                        System.out.println("Opció invàlida. Torna a intentar-ho.");
++                }
++            } while (true);
++        }
++    private void modificarMidaTaulell() {
++            throw new UnsupportedOperationException();
++        }
+ 
+     public void Sortir(){
+         throw new UnsupportedOperationException();
