@@ -40,12 +40,12 @@ public class Joc {
 
     // method to start a new game and initialize the board
     public void novaPartida() {
-        int mida = 3;
+        int tabla = 3;
         try {
             // Create a Scanner object to read the contents of the config.txt file
             Scanner reader = new Scanner(new File("src/main/java/config.txt"));
             // Read the size of the board from the first line of the file and convert it to an integer value
-            mida = reader.nextInt();
+            tabla = reader.nextInt();
             // Close the Scanner object after reading the file
             reader.close();
         } catch (IOException e) {
@@ -53,7 +53,7 @@ public class Joc {
             System.out.println("No se puede leer el archivo de configuración");
         }
         // Create a new 3x3 board with empty cells represented by space characters ' '
-        taulell = new char[mida][mida];
+        taulell = new char[tabla][tabla];
         for (char[] chars : taulell) {
             Arrays.fill(chars, ' ');
         }
@@ -238,23 +238,20 @@ public class Joc {
 
     private FileWriter getFileWriter(File savedGameFile) throws IOException {
         FileWriter writer = new FileWriter(savedGameFile);
-        writer.write(Integer.toString(torn));
-        // Write a new line character to separate the player's turn from the taulell matrix
-        writer.write(System.lineSeparator());
 
-        // Write the size of the board to the second line of the file
-        writer.write(Integer.toString(taulell.length));
-        writer.write(System.lineSeparator());
+        // Escribir el turno del jugador y una nueva línea
+        writer.write(torn + System.lineSeparator());
+        // Escribir el tamaño del tablero y una nueva línea
+        writer.write(taulell.length + System.lineSeparator());
 
-        // Write the contents of the taulell matrix to the rest of the lines
+        // Escribir el contenido del tablero
         for (char[] row : taulell) {
             for (char cell : row) {
-                // Write each cell of the taulell matrix to the file
                 writer.write(cell);
             }
-            // Write a new line character to separate each row of the taulell matrix
             writer.write(System.lineSeparator());
         }
+
         return writer;
     }
 

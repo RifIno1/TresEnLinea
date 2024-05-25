@@ -119,7 +119,7 @@ public class Tui {
 
     // method to exit the game when the user selects the exit option from the menu
     public void Sortir(){
-        System.out.println("Sortint del joc...");
+        System.out.println("Gracias por jugar. ¡Adiós!");
         System.exit(0);
     }
 

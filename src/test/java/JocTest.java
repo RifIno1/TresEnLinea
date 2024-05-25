@@ -114,15 +114,8 @@ public class JocTest {
         Assertions.assertFalse(joc.jugadaGuanyadora(2, 2));
         Assertions.assertTrue(joc.jugadaGuanyadora(2, 1));
         
-        
-
-
-
 
     }
-
-
-
 
 
 }
