@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12f73e5e-1384-48de-84c9-bf798871653c" name="Changes" comment="configuracion to Joc">
-      <change beforePath="$PROJECT_DIR$/src/main/java/GetApiKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Joc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OpenAiApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Joc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Joc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/config.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/savedgames/20240525_041111.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/savedgames/20240525_041237.txt" beforeDir="false" />
+    <list default="true" id="12f73e5e-1384-48de-84c9-bf798871653c" name="Changes" comment="utils">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/JocTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/JocTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +92,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.JocTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TresEnLinea" />
@@ -537,7 +527,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716604350351</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="logClass, tui print">
+      <option name="closed" value="true" />
+      <created>1716642204259</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1716642204259</updated>
+    </task>
+    <task id="LOCAL-00045" summary="utils">
+      <option name="closed" value="true" />
+      <created>1716642298754</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1716642298754</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,8 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="last modify before add configuracion number" />
-    <MESSAGE value="comments added" />
     <MESSAGE value="faltan cosas de carregar partida" />
     <MESSAGE value="carregar partida esta bien ahora" />
     <MESSAGE value="jugadaGuanyadora por cada caso de 3 hasta 10" />
@@ -577,6 +581,8 @@
     <MESSAGE value="quitamos method en main" />
     <MESSAGE value="quitamos method en main y anadimos en Joc, fix ruta de archivos" />
     <MESSAGE value="configuracion to Joc" />
-    <option name="LAST_COMMIT_MESSAGE" value="configuracion to Joc" />
+    <MESSAGE value="logClass, tui print" />
+    <MESSAGE value="utils" />
+    <option name="LAST_COMMIT_MESSAGE" value="utils" />
   </component>
 </project>
