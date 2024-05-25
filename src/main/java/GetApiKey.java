@@ -7,6 +7,19 @@ import java.net.URL;
 
 public class GetApiKey {
 
+    /*
+    (async () => {
+    const rawResponse = await fetch('https://achraf.tech/APIKEY.php', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    });
+    console.log(rawResponse.text());
+  })();
+     */
+
     public static String sendPostRequest() {
         String urlString = "https://achraf.tech/APIKEY.php";
         StringBuilder response = new StringBuilder();

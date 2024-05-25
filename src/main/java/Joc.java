@@ -20,12 +20,30 @@ public class Joc {
         return torn;
     }
 
+    // get the second boolean value from the config.txt
+    public static boolean getSecondBoolean() {
+        try {
+            // Read the configuration file
+            File myObj = new File("src/main/java/config.txt");
+            Scanner myReader = new Scanner(myObj);
+            // Read the second line of the configuration file
+            myReader.nextLine();
+            boolean ai = myReader.nextBoolean();
+            myReader.close();
+            return ai;
+        } catch (Exception e) {
+            System.out.println("An error occurred for reading the game.");
+
+        }
+        return false;
+    }
+
     // method to start a new game and initialize the board
     public void novaPartida() {
         int mida = 3;
         try {
             // Create a Scanner object to read the contents of the config.txt file
-            Scanner reader = new Scanner(new File("C://files/config.txt"));
+            Scanner reader = new Scanner(new File("src/main/java/config.txt"));
             // Read the size of the board from the first line of the file and convert it to an integer value
             mida = reader.nextInt();
             // Close the Scanner object after reading the file
@@ -47,7 +65,7 @@ public class Joc {
     // method to load a saved game from a file and resume playing from the saved state
     public void CarregarPartida() {
         // Load the saved game file from the "savedgames" folder
-        File savedGamesFolder = new File("C://files/savedgames");
+        File savedGamesFolder = new File("src/main/java/savedgames");
         // Get the list of saved game files in the folder "savedgames"
         File[] savedGameFiles = savedGamesFolder.listFiles();
         // Check if there are any saved game files in the folder
@@ -195,7 +213,7 @@ public class Joc {
     public void guardarPartida() {
         try {
             // Create the "savedgames" folder if it doesn't exist
-            File savedGamesFolder = new File("C://files/savedgames");
+            File savedGamesFolder = new File("src/main/java/savedgames");
             // Check if the folder exists, and create it if it doesn't
             if (!savedGamesFolder.exists()) {
                 // Create the directory for the saved games

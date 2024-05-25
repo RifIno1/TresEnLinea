@@ -83,7 +83,6 @@ public class JocTest {
     @org.junit.jupiter.api.Test
     void jugadaGuanyadora_taulellAmbFitxes(){
 
-        
         Joc joc = new Joc();
         // jugador 1
         joc.novaPartida();

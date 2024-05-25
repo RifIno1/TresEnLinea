@@ -104,7 +104,7 @@ public class Tui {
     private void guardarConfiguracion(int tamanoMostrador, boolean ai) {
         try {
             // Write the new size of the board to the configuration file
-            FileWriter myWriter = new FileWriter("C://files/config.txt");
+            FileWriter myWriter = new FileWriter("src/main/java/config.txt");
             myWriter.write(String.valueOf(tamanoMostrador));
             myWriter.write("\n");
             myWriter.write(String.valueOf(ai));

@@ -10,24 +10,6 @@ public class Main {
         switchMenu(opcio, joc, tui);
     }
 
-    // get the second boolean value from the config.txt
-    private static boolean getSecondBoolean() {
-        try {
-            // Read the configuration file
-            File myObj = new File("C://files/config.txt");
-            Scanner myReader = new Scanner(myObj);
-            // Read the second line of the configuration file
-            myReader.nextLine();
-            boolean ai = myReader.nextBoolean();
-            myReader.close();
-            return ai;
-        } catch (Exception e) {
-            System.out.println("An error occurred for reading the game.");
-
-        }
-        return false;
-    }
-
 
 // method for switch menu
     private static void switchMenu(int opcio, Joc joc, Tui tui) {
@@ -35,7 +17,7 @@ public class Main {
             case 1:
                 // new game
                 joc.novaPartida();
-                if(getSecondBoolean()){
+                if(joc.getSecondBoolean()){
                     play_with_ai(joc, tui);
                 } else {
                     play_with_friend(joc, tui);
@@ -45,7 +27,7 @@ public class Main {
                 // load game and continue playing
                 // check if there is a saved game to load
                 joc.CarregarPartida();
-                if(getSecondBoolean()){
+                if(joc.getSecondBoolean()){
                     play_with_ai(joc, tui);
                 } else {
                     play_with_friend(joc, tui);
